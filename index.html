@@ -73,18 +73,6 @@
     async function loadData() {
         document.getElementById('content').innerHTML = '<div class="loading">⏳ Caricamento dati...</div>';
 
-        if (SHEET_ID === '1VcFalu97W5cw5Sf5GWP4N0gOb88CUq6I') {
-            document.getElementById('content').innerHTML = `
-                <div class="banner">
-                    <strong>⚙️ Setup necessario</strong><br><br>
-                    Apri <code>index.html</code> e sostituisci <code>1VcFalu97W5cw5Sf5GWP4N0gOb88CUq6I</code>
-                    con l'ID del tuo Google Sheets.<br><br>
-                    L'ID è nella URL del foglio:<br>
-                    <code>docs.google.com/spreadsheets/d/<strong>[1VcFalu97W5cw5Sf5GWP4N0gOb88CUq6I]</strong>/edit</code>
-                </div>`;
-            return;
-        }
-
         try {
             const url = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/export?format=xlsx`;
             const res = await fetch(url);
@@ -194,3 +182,4 @@
 </script>
 </body>
 </html>
+
